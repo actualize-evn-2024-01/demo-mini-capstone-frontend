@@ -23,11 +23,11 @@ export function CartedProductsIndex() {
           <h2>{cartedProduct.product.name}</h2>
           <p>Quantity: {cartedProduct.quantity}</p>
           <p>Price: {cartedProduct.product.price}</p>
-          <div>
-            <Link to={`/products`}>Continue shopping</Link>
-          </div>
         </div>
       ))}
+      <div>
+        <Link to={`/products`}>Continue shopping</Link>
+      </div>
     </div>
   );
 }
