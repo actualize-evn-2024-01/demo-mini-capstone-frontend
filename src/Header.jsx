@@ -5,8 +5,9 @@ export function Header() {
   return (
     <header>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/products">All products</Link> | <Link to="/signup">Signup</Link> |{" "}
-        <Link to="/login">Login</Link> | <LogoutLink />
+        <Link to="/">Home</Link> | <Link to="/products">All products</Link> |{" "}
+        <Link to="/products/new">New product</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link>{" "}
+        | <LogoutLink />
       </nav>
     </header>
   );
