@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
@@ -66,11 +67,14 @@ export function Content() {
 
   return (
     <main>
-      <h1>Welcome to React!</h1>
-      <Signup />
-      <Login />
-      <ProductsNew onCreateProduct={handleCreateProduct} />
-      <ProductsIndex products={products} onShowProduct={handleShowProduct} />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
+        <Route path="/products" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
+        <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
+      </Routes>
+
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow
           product={currentProduct}
