@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 export function ProductsIndex(props) {
   return (
     <div>
@@ -9,6 +11,9 @@ export function ProductsIndex(props) {
           <img width="300px" src={product.primary_image} alt="" />
           <div>
             <button onClick={() => props.onShowProduct(product)}>More info</button>
+          </div>
+          <div>
+            <Link to={`/products/${product.id}`}>More info on separate page</Link>
           </div>
         </div>
       ))}
