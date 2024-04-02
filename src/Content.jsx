@@ -9,6 +9,7 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { Modal } from "./Modal";
 import { CartedProductsIndex } from "./CartedProductsIndex";
+import { OrdersIndex } from "./OrdersIndex";
 
 export function Content() {
   const [products, setProducts] = useState([]);
@@ -77,6 +78,7 @@ export function Content() {
         <Route path="/products/:id" element={<ProductsShowPage />} />
         <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct} />} />
         <Route path="/carted_products" element={<CartedProductsIndex />} />
+        <Route path="/orders" element={<OrdersIndex />} />
       </Routes>
 
       <Modal show={isProductsShowVisible} onClose={handleClose}>
