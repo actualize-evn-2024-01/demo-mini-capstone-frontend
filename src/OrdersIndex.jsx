@@ -6,7 +6,7 @@ export function OrdersIndex() {
   const [orders, setOrders] = useState([]);
 
   const handleOrdersIndex = () => {
-    axios.get("http://localhost:3000/orders.json").then((response) => {
+    axios.get("/orders.json").then((response) => {
       console.log("handleOrdersIndex", response);
       setOrders(response.data);
     });

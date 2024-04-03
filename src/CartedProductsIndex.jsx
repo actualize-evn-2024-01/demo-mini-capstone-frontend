@@ -9,7 +9,7 @@ export function CartedProductsIndex() {
   const navigate = useNavigate();
 
   const handleCartedProductsIndex = () => {
-    axios.get("http://localhost:3000/carted_products.json").then((response) => {
+    axios.get("/carted_products.json").then((response) => {
       console.log("handleCartedProductsIndex", response);
       setCartedProducts(response.data);
     });
@@ -17,7 +17,7 @@ export function CartedProductsIndex() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:3000/orders.json").then((response) => {
+    axios.post("/orders.json").then((response) => {
       console.log(response);
       navigate(`/orders`);
     });
